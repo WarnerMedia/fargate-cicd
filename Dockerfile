@@ -9,6 +9,8 @@ ENV DOCKER_VERSION 18.03.1
 RUN apt-get update && apt-get install --no-install-recommends -y \
     apt-transport-https \
     ca-certificates \
+    ssh \
+    git \
     curl \
     software-properties-common && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
