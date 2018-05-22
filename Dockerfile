@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) \
     stable" && \
-    apt-get update && apt-get install —-no-install-recommends -y docker-ce=${DOCKER_VERSION}~ce-0~ubuntu \
+    apt-get update && apt-get install --no-install-recommends -y docker-ce=${DOCKER_VERSION}~ce-0~ubuntu \
     jq \
     python-pip && \
     rm -rf /var/lib/apt/lists/*
