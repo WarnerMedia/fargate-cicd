@@ -33,7 +33,7 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py --user
 RUN python -m pip install awscli
 
 # install fargate-cli
-ENV FARGATE_VERSION v0.3.0-pre-5-g6c463b2
+ENV FARGATE_VERSION v0.3.0
 RUN curl -SLo /usr/local/bin/fargate https://github.com/turnerlabs/fargate/releases/download/${FARGATE_VERSION}/ncd_linux_amd64 && chmod +x /usr/local/bin/fargate
 
 RUN mkdir -p /project
