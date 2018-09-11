@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     ca-certificates \
     ssh \
     git \
+    bzip2 \
     curl \
     software-properties-common && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
