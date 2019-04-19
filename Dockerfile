@@ -5,7 +5,7 @@ RUN echo "alias dc=docker-compose" >> ~/.bashrc && \
     echo "alias f=fargate" >> ~/.bashrc
 
 # install docker
-ENV DOCKER_VERSION 18.03.1
+ENV DOCKER_VERSION 18.06.3
 RUN apt-get update && apt-get install --no-install-recommends -y \
     apt-transport-https \
     ca-certificates \
@@ -19,14 +19,14 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) \
     stable" && \
-    apt-get update && apt-get install --no-install-recommends -y docker-ce=${DOCKER_VERSION}~ce-0~ubuntu \
+    apt-get update && apt-get install --no-install-recommends -y docker-ce=${DOCKER_VERSION}~ce~3-0~ubuntu \
     jq \
     python-pip && \
     rm -rf /var/lib/apt/lists/*
 
 
 # install docker-compose
-ENV DC_VERSION 1.21.1
+ENV DC_VERSION 1.23.2
 RUN curl -L https://github.com/docker/compose/releases/download/${DC_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 # install aws-cli
