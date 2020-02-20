@@ -16,15 +16,15 @@ RUN apt-get update && \
       software-properties-common \
       jq \
       python-pip && \
-    curl -fsSLO "https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz" && \
+    curl -sSfLO "https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz" && \
     tar xzvf docker-${DOCKER_VERSION}.tgz --strip 1 -C /usr/local/bin docker/docker && \
     rm docker-${DOCKER_VERSION}.tgz && \
-    curl -L https://github.com/docker/compose/releases/download/${DC_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
+    curl -sSfLo /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/${DC_VERSION}/docker-compose-`uname -s`-`uname -m` && \
     chmod +x /usr/local/bin/docker-compose && \
-    curl -O https://bootstrap.pypa.io/get-pip.py && \
+    curl -sSfLO https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py --user && \
     python -m pip install awscli && \
-    curl -SLo /usr/local/bin/fargate https://github.com/turnerlabs/fargate/releases/download/${FARGATE_VERSION}/ncd_linux_amd64 && \
+    curl -sSfLo /usr/local/bin/fargate https://github.com/turnerlabs/fargate/releases/download/${FARGATE_VERSION}/ncd_linux_amd64 && \
     chmod +x /usr/local/bin/fargate && \
     mkdir -p /project && \
     echo "alias dc=docker-compose" >> ~/.bashrc && \
