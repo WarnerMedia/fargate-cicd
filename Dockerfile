@@ -15,6 +15,7 @@ RUN apt-get update && \
       curl \
       software-properties-common \
       jq \
+      make \
       python-pip && \
     curl -sSfLO "https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz" && \
     tar xzvf docker-${DOCKER_VERSION}.tgz --strip 1 -C /usr/local/bin docker/docker && \
