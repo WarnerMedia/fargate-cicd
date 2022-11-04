@@ -1,0 +1,6 @@
+version: "2"
+services:
+  cicd:
+    build: .
+    image: ghcr.io/warnermedia/fargate-cicd:v0.12.1
+    
