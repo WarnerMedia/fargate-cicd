@@ -2,7 +2,7 @@
 
 A build image for doing CI/CD with Docker and AWS Fargate
 
-[![Docker Repository on Quay](https://quay.io/repository/turner/fargate-cicd/status "Docker Repository on Quay")](https://quay.io/repository/turner/fargate-cicd)
+[Docker Repository on Github](https://github.com/WarnerMedia/fargate-cicd/pkgs/container/fargate-cicd)
 
 Includes:
 
@@ -15,5 +15,5 @@ Includes:
 Usage:
 
 ```
-docker pull quay.io/turner/fargate-cicd
+docker pull ghcr.io/warnermedia/fargate-cicd:v0.12.1
 ```
